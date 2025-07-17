@@ -16,4 +16,4 @@ For support, please visit <https://www.securosys.com/en/support>.
 
 ## License
 
-TODO
+The content of this repository is licensed under the [Apache 2.0 license](LICENSE).

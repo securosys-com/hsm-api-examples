@@ -1,3 +1,6 @@
+# SPDX-FileCopyrightText: Copyright 2025 Securosys SA
+# SPDX-License-Identifier: Apache-2.0
+
 SRC_DIR = ./src
 BUILD_DIR = ./build
 PRIMUS_HOME = /usr/local/primus

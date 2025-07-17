@@ -1,3 +1,6 @@
+/* SPDX-FileCopyrightText: Copyright 2025 Securosys SA */
+/* SPDX-License-Identifier: Apache-2.0 */
+
 #include "pkcs11.h"
 
 #ifndef __cplusplus

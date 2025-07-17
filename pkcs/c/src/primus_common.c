@@ -1,3 +1,6 @@
+// SPDX-FileCopyrightText: Copyright 2025 Securosys SA
+// SPDX-License-Identifier: Apache-2.0
+
 #include <stdbool.h> // TODO: only needed because of bool in pkcs11.h header file
 #include <stddef.h>
 
