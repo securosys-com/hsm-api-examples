@@ -1,0 +1,14 @@
+stages:
+  - mirror
+
+mirror:
+  stage: mirror
+  tags:
+    - PortalApi
+  rules:
+    - if: $CI_COMMIT_BRANCH == "main"
+  # Mirror the main branch as-is to GitHub
+  script:
+    - git fetch
+    - git remote add github git@github.com:securosys-com/hsm-api-examples.git || true
+    - git push --force github refs/remotes/origin/main:refs/heads/main
