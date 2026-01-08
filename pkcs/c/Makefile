@@ -14,7 +14,7 @@ LIBS = -l primusP11 -l botan-2
 
 COMMON = src/primus_common.c
 
-BINS = attestation rsa
+BINS = attestation rsa slip10
 
 all: $(BINS)
 
