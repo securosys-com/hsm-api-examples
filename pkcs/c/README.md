@@ -10,19 +10,21 @@ as described [in the documentation](https://docs.securosys.com/pkcs/overview).
 On Debian/Ubuntu, the following packages are required:
 
 - `build-essential`
-- `libbotan-2-dev` (for the attestation example)
+- `libbotan-2-dev` (some examples use utils from Botan)
 
-These examples were tested with the Primus PKCS#11 Provider 2.4.0 on Ubuntu 24.04.
+The examples were tested with the Primus PKCS#11 Provider 2.4.0 on Ubuntu 24.04.
 
 ## Usage
 
 ```sh
 make
 
-./bin/rsa
-./bin/attestation
+./build/attestation
+./build/rsa
+./build/slip10
 ```
 
 ## References
 
 - [PKCS#11 specification](https://docs.oasis-open.org/pkcs11/pkcs11-spec/v3.1/pkcs11-spec-v3.1.html)
+- [Securosys vendor extensions to PKCS#11](https://docs.securosys.com/pkcs/vendor/overview)

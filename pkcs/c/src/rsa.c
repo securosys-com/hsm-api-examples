@@ -55,7 +55,7 @@ CK_RV list_private_keys(CK_SESSION_HANDLE session)
             CK_KEY_TYPE type = -1; // CKK_RSA == 0
 
             CK_ATTRIBUTE attr[] = {
-                {CKA_LABEL, label, 64},
+                {CKA_LABEL, label, sizeof(label)},
                 {CKA_KEY_TYPE, &type, sizeof(CK_KEY_TYPE)},
             };
 
