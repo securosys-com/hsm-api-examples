@@ -1,6 +1,7 @@
-# PKCS#11 C Examples
+# PKCS#11 C/C++ Examples
 
-The examples in this directory show how to use the PKCS#11 interface from C.
+The examples in this directory show how to use the PKCS#11 interface from C/C++.
+They are mainly written in C, but use C++ (`std::vector`, Botan, etc.) where convenient.
 
 ## Prerequisites
 
@@ -17,6 +18,8 @@ The examples were tested with the Primus PKCS#11 Provider 2.4.0 on Ubuntu 24.04.
 ## Usage
 
 ```sh
+export P11_PIN=123456 # your PKCS#11 Password
+
 make
 
 ./build/attestation

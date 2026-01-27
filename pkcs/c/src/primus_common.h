@@ -10,6 +10,6 @@
 
 #endif
 
-CK_RV SetupSession(CK_SESSION_HANDLE_PTR phSession, CK_CHAR_PTR userPin, CK_ULONG userPinLen);
+CK_RV SetupSession(CK_SESSION_HANDLE_PTR phSession);
 
 void CloseSession(CK_SESSION_HANDLE hSession);
