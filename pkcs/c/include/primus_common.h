@@ -3,6 +3,9 @@
 
 #include "pkcs11.h"
 
+#ifndef PRIMUS_COMMON_H
+#define PRIMUS_COMMON_H
+
 #ifndef __cplusplus
 
 #undef NULL_PTR
@@ -10,6 +13,16 @@
 
 #endif
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 CK_RV SetupSession(CK_SESSION_HANDLE_PTR phSession);
 
 void CloseSession(CK_SESSION_HANDLE hSession);
+
+#ifdef __cplusplus
+}
+#endif
+
+#endif /* PRIMUS_COMMON_H */

@@ -10,6 +10,7 @@ as described [in the documentation](https://docs.securosys.com/pkcs/overview).
 
 On Debian/Ubuntu, the following packages are required:
 
+- `cmake`
 - `build-essential`
 - `libbotan-2-dev` (some examples use utils from Botan)
 
@@ -20,7 +21,8 @@ The examples were tested with the Primus PKCS#11 Provider 2.4.0 on Ubuntu 24.04.
 ```sh
 export P11_PIN=123456 # your PKCS#11 Password
 
-make
+cmake -B build
+cmake --build build
 
 ./build/attestation
 ./build/rsa
