@@ -28,7 +28,8 @@ CK_RV SetupSession(CK_SESSION_HANDLE_PTR phSession)
         return rv;
 
     CK_ULONG flags = CKF_SERIAL_SESSION | CKF_RW_SESSION;
-    rv = C_OpenSession(0, flags, NULL_PTR, NULL_PTR, phSession);
+    CK_SLOT_ID slotId = 0;
+    rv = C_OpenSession(slotId, flags, NULL_PTR, NULL_PTR, phSession);
     if (rv != CKR_OK)
     {
         C_Finalize(NULL_PTR);
