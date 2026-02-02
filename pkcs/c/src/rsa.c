@@ -12,7 +12,6 @@
  */
 
 #include <assert.h>
-#include <stdbool.h> // TODO: only needed because of bool in pkcs11.h header file
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -211,18 +210,9 @@ CK_RV rsa(CK_SESSION_HANDLE session)
 int main()
 {
     CK_RV rv = CKR_OK;
-
-    CK_CHAR_PTR userPin = (CK_CHAR_PTR)getenv("P11_PIN");
-    if (userPin == NULL_PTR)
-    {
-        printf("P11_PIN envvar not set\n");
-        return CKR_GENERAL_ERROR;
-    }
-
-    CK_ULONG userPinLen = strlen((char *)userPin);
     CK_SESSION_HANDLE session;
 
-    rv = SetupSession(&session, userPin, userPinLen);
+    rv = SetupSession(&session);
     if (rv != CKR_OK)
         return rv;
 
