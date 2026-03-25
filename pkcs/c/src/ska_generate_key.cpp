@@ -87,7 +87,6 @@ CK_RV ska_generate_key_pair(CK_SESSION_HANDLE hSession) {
       {CKA_SIGN, &bTrue, sizeof(CK_BBOOL)},
       {CKA_SIGN_RECOVER, &bTrue, sizeof(CK_BBOOL)},
       {CKA_UNWRAP, &bTrue, sizeof(CK_BBOOL)},
-      {CKA_EXTRACTABLE, &bTrue, sizeof(CK_BBOOL)},
       {CKA_MODIFIABLE, &bTrue, sizeof(CK_BBOOL)},
       {CKA_PRIVATE, &bTrue, sizeof(CK_BBOOL)},
       // Vendor-specific attributes
