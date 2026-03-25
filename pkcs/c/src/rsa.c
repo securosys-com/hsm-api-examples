@@ -30,7 +30,7 @@ CK_RV list_private_keys(CK_SESSION_HANDLE session)
     CK_ULONG objectCount;
 
     // Search template
-    CK_OBJECT_CLASS class = CKO_PRIVATE_KEY;
+    CK_OBJECT_CLASS class = CKO_PRIVATE_KEY; // CKO_SKA_PRIVATE_KEY
     CK_ATTRIBUTE template[] = {
         {CKA_CLASS, &class, sizeof(class)}};
 
@@ -52,17 +52,20 @@ CK_RV list_private_keys(CK_SESSION_HANDLE session)
         {
             char label[64] = {0};  // if too small, will return CKR_BUFFER_TOO_SMALL
             CK_KEY_TYPE type = -1; // CKK_RSA == 0
+            CK_BBOOL extractable = -1;
 
             CK_ATTRIBUTE attr[] = {
                 {CKA_LABEL, label, sizeof(label)},
                 {CKA_KEY_TYPE, &type, sizeof(CK_KEY_TYPE)},
+                {CKA_EXTRACTABLE, &extractable, sizeof(CK_BBOOL)},
             };
 
             // Ignore the return value and just continue with the next attribute
-            C_GetAttributeValue(session, objects[i], attr, 2);
+            C_GetAttributeValue(session, objects[i], attr, NUM_ATTR(attr));
 
             printf("Label: %s\n", label);
             printf("Key type: %lu\n", type);
+            printf("Extractable: %u (%s)\n", extractable, extractable ? "true" : "false");
         }
     }
 
@@ -100,6 +103,7 @@ CK_RV rsa(CK_SESSION_HANDLE session)
         {CKA_TOKEN, &bTrue, sizeof(bTrue)},
         {CKA_PRIVATE, &bTrue, sizeof(bTrue)},
         {CKA_LABEL, &label, sizeof(label) - 1},
+        {CKA_EXTRACTABLE, &bFalse, sizeof(CK_BBOOL)},
         // key attributes
         {CKA_DECRYPT, &bTrue, sizeof(bTrue)},
         {CKA_SIGN, &bFalse, sizeof(bFalse)},
