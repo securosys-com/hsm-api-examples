@@ -63,8 +63,8 @@ CK_RV list_private_keys(CK_SESSION_HANDLE session)
             // Ignore the return value and just continue with the next attribute
             C_GetAttributeValue(session, objects[i], attr, NUM_ATTR(attr));
 
-            printf("Label: %s\n", label);
-            printf("Key type: %lu\n", type);
+            printf("Label: %-40s\t", label);
+            printf("Key type: %lu\t", type);
             printf("Extractable: %u (%s)\n", extractable, extractable ? "true" : "false");
         }
     }
