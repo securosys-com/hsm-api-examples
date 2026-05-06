@@ -16,8 +16,6 @@
 // Botan
 #include <botan/hex.h>
 
-#define NUM_ATTR(x) (sizeof(x) / sizeof(CK_ATTRIBUTE))
-
 CK_RV ska_generate_key_pair(CK_SESSION_HANDLE hSession) {
 
   CK_RV rv = CKR_OK;

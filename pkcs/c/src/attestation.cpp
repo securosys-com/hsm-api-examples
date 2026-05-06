@@ -33,8 +33,6 @@
 #include "pkcs11.h"
 #include "primus_common.h"
 
-#define NUM_ATTR(x) (sizeof(x) / sizeof(CK_ATTRIBUTE))
-
 CK_RV attestation(CK_SESSION_HANDLE session)
 {
     CK_RV rv = CKR_OK;

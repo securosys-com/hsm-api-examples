@@ -22,8 +22,6 @@
 #include <botan/der_enc.h>
 #include <botan/rsa.h>
 
-#define NUM_ATTR(x) (sizeof(x) / sizeof(CK_ATTRIBUTE))
-
 CK_RV ska_sign(CK_SESSION_HANDLE hSession) {
 
   CK_RV rv = CKR_OK;

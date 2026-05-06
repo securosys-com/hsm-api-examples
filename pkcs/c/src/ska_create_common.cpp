@@ -21,7 +21,6 @@
 #include <botan/pubkey.h>
 #include <botan/rsa.h>
 
-#define NUM_ATTR(x) (sizeof(x) / sizeof(CK_ATTRIBUTE))
 #define NUM_APPROVALS(x) (sizeof(x) / sizeof(CK_SKA_APPROVAL))
 
 CK_RV ska_create_all(CK_SESSION_HANDLE hSession,

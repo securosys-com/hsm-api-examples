@@ -6,6 +6,8 @@
 #ifndef PRIMUS_COMMON_H
 #define PRIMUS_COMMON_H
 
+#define NUM_ATTR(x) (sizeof(x) / sizeof(CK_ATTRIBUTE))
+
 #ifndef __cplusplus
 
 #undef NULL_PTR
