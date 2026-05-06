@@ -25,6 +25,7 @@ cmake -B build
 cmake --build build
 
 ./build/attestation
+./build/ml_dsa
 ./build/rsa
 ./build/slip10
 ```
