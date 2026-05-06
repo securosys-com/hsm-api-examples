@@ -31,5 +31,5 @@ cmake --build build
 
 ## References
 
-- [PKCS#11 specification](https://docs.oasis-open.org/pkcs11/pkcs11-spec/v3.1/pkcs11-spec-v3.1.html)
+- [PKCS#11 specification](https://docs.oasis-open.org/pkcs11/pkcs11-spec/v3.2/pkcs11-spec-v3.2.html)
 - [Securosys vendor extensions to PKCS#11](https://docs.securosys.com/pkcs/vendor/overview)
