@@ -42,8 +42,6 @@ CK_RV ml_dsa(CK_SESSION_HANDLE session) {
 
   // https://docs.oasis-open.org/pkcs11/pkcs11-spec/v3.2/pkcs11-spec-v3.2.html#_Toc195693747
   CK_ML_DSA_PARAMETER_SET_TYPE paramSet = CKP_ML_DSA_87;
-  CK_BYTE value[] = {0x0};
-  CK_BYTE seed[] = {0};
 
   CK_ATTRIBUTE publicTemplate[] = {
       {CKA_TOKEN, &bTrue, sizeof(bTrue)},
@@ -52,7 +50,6 @@ CK_RV ml_dsa(CK_SESSION_HANDLE session) {
       {CKA_KEY_TYPE, &keyType, sizeof(CK_KEY_TYPE)},
       // ML-DSA-specific attributes
       {CKA_PARAMETER_SET, &paramSet, sizeof(paramSet)},
-      {CKA_VALUE, value, sizeof(value)},
       // key attributes
       {CKA_VERIFY, &bTrue, sizeof(bTrue)},
   };
@@ -63,10 +60,6 @@ CK_RV ml_dsa(CK_SESSION_HANDLE session) {
       {CKA_LABEL, &label, sizeof(label) - 1},
       {CKA_EXTRACTABLE, &bFalse, sizeof(CK_BBOOL)},
       {CKA_KEY_TYPE, &keyType, sizeof(CK_KEY_TYPE)},
-      // ML-DSA-specific attributes
-      {CKA_PARAMETER_SET, &paramSet, sizeof(paramSet)},
-      {CKA_VALUE, value, sizeof(value)},
-      {CKA_SEED, seed, 0},
       // key attributes
       {CKA_SIGN, &bTrue, sizeof(bTrue)},
   };
