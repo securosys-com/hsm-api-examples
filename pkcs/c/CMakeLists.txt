@@ -36,6 +36,9 @@ target_link_libraries(attestation PRIVATE common_deps)
 add_executable(ml_dsa src/ml_dsa.c)
 target_link_libraries(ml_dsa PRIVATE common_deps)
 
+add_executable(multithreading src/multithreading.c)
+target_link_libraries(multithreading PRIVATE common_deps)
+
 add_executable(rsa src/rsa.c)
 target_link_libraries(rsa PRIVATE common_deps)
 
