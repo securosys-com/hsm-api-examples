@@ -37,8 +37,8 @@ CK_RV attestation(CK_SESSION_HANDLE session)
 {
     CK_RV rv = CKR_OK;
 
-    CK_BOOL bTrue = CK_TRUE;
-    CK_BOOL bFalse = CK_FALSE;
+    CK_BBOOL bTrue = CK_TRUE;
+    CK_BBOOL bFalse = CK_FALSE;
 
     printf("Generating AES key to be attested...\n");
 
