@@ -14,21 +14,29 @@ CK_RV SetupSession(CK_SESSION_HANDLE_PTR phSession)
 {
     CK_RV rv = CKR_OK;
 
+    // Get User PIN
     CK_CHAR_PTR userPin = (CK_CHAR_PTR)getenv("P11_PIN");
     if (userPin == NULL_PTR)
     {
         printf("P11_PIN envvar not set\n");
         return CKR_GENERAL_ERROR;
     }
-
     CK_ULONG userPinLen = strlen((char *)userPin);
+
+    // Get Slot ID
+    CK_SLOT_ID slotId = 0;
+    CK_CHAR_PTR slotIdChar = (CK_CHAR_PTR)getenv("P11_SLOT_ID");
+    if (slotIdChar != NULL_PTR)
+    {
+        slotId = atoi(slotIdChar);
+    }
+    printf("Using slot %ld\n", slotId);
 
     rv = C_Initialize(NULL);
     if (rv != CKR_OK)
         return rv;
 
     CK_ULONG flags = CKF_SERIAL_SESSION | CKF_RW_SESSION;
-    CK_SLOT_ID slotId = 0;
     rv = C_OpenSession(slotId, flags, NULL_PTR, NULL_PTR, phSession);
     if (rv != CKR_OK)
     {

@@ -20,6 +20,7 @@ The examples were tested with the Primus PKCS#11 Provider 2.4.0 on Ubuntu 24.04.
 
 ```sh
 export P11_PIN=123456 # your PKCS#11 Password
+export P11_SLOT_ID=2 # optional, otherwise the slot ID defaults to 0
 
 cmake -B build
 cmake --build build
