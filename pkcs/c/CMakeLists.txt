@@ -11,6 +11,10 @@ include_directories(
   ${CMAKE_CURRENT_SOURCE_DIR}/include
 )
 
+link_directories(
+  /usr/local/primus/lib
+)
+
 # Set shared requirements
 # https://cmake.org/cmake/help/latest/command/add_library.html#interface-libraries
 add_library(common_deps INTERFACE)
