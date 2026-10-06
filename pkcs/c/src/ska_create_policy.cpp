@@ -58,7 +58,7 @@ CK_RV ska_create_policy() {
   CK_SKA_APPROVER approvers[] = {
       // Approver 1
       {
-          (CK_CHAR_PTR) "approver_1", 11, // The approver name
+          (CK_CHAR_PTR) "approver_1", 10, // The approver name
           CKAP_SIGNATURE, approvalPubKey.data(),
           approvalPubKey.size() // The public key.
       },

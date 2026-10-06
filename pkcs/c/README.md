@@ -14,7 +14,7 @@ On Debian/Ubuntu, the following packages are required:
 - `build-essential`
 - `libbotan-2-dev` (some examples use utils from Botan)
 
-The examples were tested with the Primus PKCS#11 Provider 2.4.0 on Ubuntu 24.04.
+The examples were tested with the Primus PKCS#11 Provider 2.8.2 on Ubuntu 24.04.
 
 ## Usage
 
@@ -29,6 +29,7 @@ cmake --build build
 ./build/ml_dsa
 ./build/multithreading
 ./build/rsa
+./build/ska_...
 ./build/slip10
 ```
 

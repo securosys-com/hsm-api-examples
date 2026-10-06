@@ -85,7 +85,7 @@ CK_RV ml_dsa(CK_SESSION_HANDLE session) {
 
   printf("Using pure hash\n");
   CK_MECHANISM_TYPE sigMechType = CKM_ML_DSA;
-  CK_SIGN_ADDITIONAL_CONTEXT params = {hedgeType, ctx, sizeof(ctx)};
+  CK_SIGN_ADDITIONAL_CONTEXT params = {hedgeType, ctx, sizeof(ctx) - 1};
   CK_BYTE message[] = "i like pizza";
 
 #elif HASH_MODE == HASH_MODE_PROVIDER

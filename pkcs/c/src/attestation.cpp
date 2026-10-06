@@ -178,7 +178,7 @@ CK_RV attestation(CK_SESSION_HANDLE session)
             break;
 
         size_t end = certChainString.find(endMarker, begin);
-        if (begin == std::string::npos)
+        if (end == std::string::npos)
             break;
         end += endMarker.length();
 
@@ -196,6 +196,7 @@ CK_RV attestation(CK_SESSION_HANDLE session)
         printf("SHA-256 fingerprint: %s \n", c.fingerprint("SHA-256").c_str());
     }
 
+    // Assumed chain order: leaf -> intermediate -> root
     printf("Validating cert chain...\n");
 
     Botan::X509_Certificate root = certs[2];
